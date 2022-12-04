@@ -3,7 +3,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import login_user
 from .models import User
 from . import db
-
+from flask_login import login_user, login_required, logout_user, current_user
 auth = Blueprint('auth', __name__)
 
 @auth.route('/login')
@@ -33,14 +33,18 @@ def signup_post():
     password = request.form.get('password')
     user = User.query.filter_by(email=email).first()
     if user:
-        flash("Interni server error")
+        flash("Email adresa već postoji, pređite na login")
         return redirect(url_for('auth.signup'))
+
     new_user = User(email=email, name=name, password=generate_password_hash(password, method='sha256'))
     db.session.add(new_user)
     db.session.commit()
+    login_user(user, remember=remember)
     return redirect(url_for('auth.login'))
 
 
 @auth.route('/logout')
+@login_required
 def logout():
-    return 'Logout'
+    logout_user()
+    return redirect(url_for('auth.login'))

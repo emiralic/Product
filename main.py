@@ -5,7 +5,7 @@ main = Blueprint('main', __name__)
 
 @main.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('signup.html')
 
 @main.route('/profile')
 def profile():
