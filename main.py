@@ -8,5 +8,6 @@ def index():
     return render_template('signup.html')
 
 @main.route('/profile')
+@main.route('/home')
 def profile():
     return render_template('profile.html')
