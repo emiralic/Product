@@ -3,6 +3,7 @@
 {% block content %}
 <div class="column is-4 is-offset-4" xmlns="http://www.w3.org/1999/html">
     <div class="box">
+     
         <form method="POST" class="form-signin" action="/login">
             <img class="mb-4" src="https://res.cloudinary.com/dkqqsgsvn/image/upload/v1670129441/1_aocuy8.png" alt="">
             <h1 class="h3 mb-3 font-weight-normal">
@@ -22,6 +23,13 @@
                 </b>
             <button class="button is-block is-info is-large is-fullwidth" style="background: green ;color:white;">Log In</button>
         </form>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div class="notification is-danger">
+                {{ messages[0] }}
+            </div>
+        {% endif %}
+        {% endwith %}
     </div>
 </div>
 {% endblock %}
