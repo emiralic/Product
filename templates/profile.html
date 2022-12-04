@@ -1,6 +1,30 @@
 {% extends "base.html" %}
 
 {% block content %}
+<head xmlns="http://www.w3.org/1999/html">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <p> &nbsp;	&nbsp; &nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;&nbsp;&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp; &nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;&nbsp;  &nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp; &nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp; &nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp; &nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;  &nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp; &nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;
+        <button type="button" class="button is-block is-info is-large is-fullwidth"</button>
+        <p><a href="login" target="login">
+      <img src="https://cdn-icons-png.flaticon.com/512/2767/2767155.png" jsaction="load:XAeZkd;" jsname="HiaYvf" class="n3VNCb KAlRDb" alt="Logout - Free ui icons" data-noaft="1" style="width: 15px; height: 15px; margin: 0px;">
+            </a></p>
+      </p>
+        </form>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div class="notification is-danger">
+                {{ messages[0] }}
+            </div>
+        {% endif %}
+        {% endwith %}
+    </div>
+  </body>
 <h1 class="title">
   <div class="column is-4 is-offset-4" >
     <img class="mb-4" src="https://res.cloudinary.com/dkqqsgsvn/image/upload/v1670129441/1_aocuy8.png" alt="">
@@ -33,5 +57,6 @@
     <h5>🧑Peter P.&nbsp;	&nbsp;  &nbsp;	&nbsp;	&nbsp;	&nbsp;</h5>
     <h6>09:15·Covid 19 &nbsp;	&nbsp;	&nbsp;	&nbsp;</h6>
   </div>
+  </body>
 </h1>
 {% endblock %}
